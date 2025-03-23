@@ -23,17 +23,16 @@ h1 {
   border-radius: 24px;
  background-size: 600px;
   overflow: hidden;
-  border-radius: 24px;
-  
 }
 @keyframes moverFundo {
   0% {
     background-position: 0 0;
   }
   100% {
-    background-position: -1000px 0; /* Ajuste conforme o tamanho da imagem e a velocidade desejada */
+    background-position: -600px 0; /* Ajuste conforme o tamanho da imagem e a velocidade desejada */
   }
 }
+
 #player {
   width:90px;
   position: absolute;
