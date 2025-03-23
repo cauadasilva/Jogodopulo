@@ -18,7 +18,7 @@ h1 {
   margin: 20px auto;
   position: relative;
   background-repeat: repeat-x;
-  animation: moverFundo 10s linear infinite;
+  animation: moverFundo 20s linear infinite;
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6_3oyN1Mz5wQ5D3LuHDaVqw1HcMf_deWQlSkJDEAdRIgwtX-h_xuB8gg&s=10");
   border-radius: 24px;
  background-size: 600px;
@@ -33,7 +33,7 @@ h1 {
   100% {
     background-position: -1000px 0; /* Ajuste conforme o tamanho da imagem e a velocidade desejada */
   }
-},
+}
 #player {
   width:90px;
   position: absolute;
