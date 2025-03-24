@@ -5,6 +5,7 @@ const scoreText = document.getElementById("score");
 const message = document.getElementById("message");
 const player = document.getElementById("player");
 const obstacle = document.getElementById("obstacle");
+const bmg = document.getElementById("bgm");
 
 let isJumping = false;
 let score = 0;
@@ -21,7 +22,8 @@ function startGame() {
   playButton.style.display = "none";
   jumpButton.style.display = "inline-block";
   restartButton.style.display = "none";
-
+bgm.currentTime = 0;
+bgm.play();
   score = 0;
   gameOver = false;
   obstacleSpeed = 5;
@@ -96,13 +98,14 @@ function checkCollision() {
   const collisionThreshold = 35; // Ajuste fino da sensibilidade
 
   if (dx < collisionThreshold && dy < collisionThreshold) {
-    gameOver = true;
-    message.innerText = "CONTRATADO! Siga @Cauaaasantos no insta!";
-    clearInterval(scoreInterval);
-    clearInterval(speedInterval);
-    clearInterval(gameLoop);
-    restartButton.style.display = "inline-block";
-  }
+  gameOver = true;
+  message.innerText = "CONTRATADO! Siga @Cauaaasantos no insta!";
+  clearInterval(scoreInterval);
+  clearInterval(speedInterval);
+  clearInterval(gameLoop);
+  restartButton.style.display = "inline-block";
+  bgm.pause(); // Coloque aqui dentro
+}
 }
 
 restartButton.addEventListener("click", () => {
