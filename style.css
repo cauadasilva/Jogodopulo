@@ -1,15 +1,35 @@
-body {
-  text-align: center;
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+/* Reset e base */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-h1 {
-  margin-top: 20px;
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
 }
 
+/* Contêiner principal com retângulo ao redor */
+#container {
+  width: 95%;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 4px solid #333;
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* Título */
+h1 {
+  margin-bottom: 20px;
+}
+
+/* Área do jogo */
 #game {
   width: 90%;
   max-width: 600px;
@@ -18,10 +38,10 @@ h1 {
   margin: 20px auto;
   position: relative;
   background-repeat: repeat-x;
-  animation: moverFundo 20s linear infinite;
+  animation: moverFundo 30s linear infinite;
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6_3oyN1Mz5wQ5D3LuHDaVqw1HcMf_deWQlSkJDEAdRIgwtX-h_xuB8gg&s=10");
   border-radius: 24px;
- background-size: 600px;
+ background-size: 450px;
   overflow: hidden;
 }
 @keyframes moverFundo {
@@ -33,24 +53,27 @@ h1 {
   }
 }
 
+/* Jogador */
 #player {
-  width:90px;
+  width: 60px;
   position: absolute;
   bottom: 0;
-  left: 10px;
-  transition: bottom 0.50s;
-  
+  left: 40px;
+  border-radius: 5px;
+  transition: bottom 0.4s;
 }
 
+/* Obstáculo */
 #obstacle {
-  width:45px;
+  width:40px;
+  
   position: absolute;
   bottom: 0;
-  right: 0;
-  animation: moveObstacle 2s linear infinite;
-  
+  left: 600px; /* inicial fora da tela */
+  border-radius: 5px;
 }
 
+/* Animação de movimento do obstáculo */
 @keyframes moveObstacle {
   from {
     right: -40px;
@@ -60,41 +83,49 @@ h1 {
   }
 }
 
+/* Pulo */
 .jump {
   bottom: 100px !important;
 }
 
+/* Texto de pontuação */
 #score {
   font-size: 20px;
+  margin-top: 20px;
 }
 
+/* Mensagem de fim de jogo */
 #message {
   color: red;
   font-size: 24px;
   font-weight: bold;
+  margin: 10px 0;
 }
 
-#jumpButton {
+/* Botões */
+button {
   font-size: 18px;
-  padding: 15px 30px;
-  background-color: #007bff;
+  padding: 12px 25px;
+  background-color: #28a745;
   color: white;
   border: none;
   border-radius: 10px;
-  margin-top: 20px;
   cursor: pointer;
+  margin: 5px;
 }
 
-#jumpButton:active {
-  background-color: #0056b3;
+button:active {
+  background-color: #218838;
 }
-#restartButton{
-  font-size: 18px;
-  padding: 15px 30px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  margin-top: 20px;
-  cursor: pointer;
+
+/* Responsividade extra (opcional) */
+@media (max-width: 500px) {
+  #game {
+    height: 250px;
+  }
+  
+
+  .jump {
+    bottom: 80px !important;
+  }
 }

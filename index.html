@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jogo 2D - Mobile</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jogo do Pulo</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>JOGO DO PULO!!<br>
-   ↓↓↓↓
-  </h1>
-  <div id="game">
-    <p id="score">Pontos: 0</p>
-    <img src="mario.gif" id="player">
-    <img src="mal.png" id="obstacle">
-  </div>
-  
-  <p id="message"></p>
-  <button id="jumpButton">PULAR</button>
+ 
+    <h1>Jogo do Pulo<br>↓↓↓↓</h1>
 
-<button id="restartButton">RECOMEÇAR</button>
+    <div id="game">
+       <p id="score">Pontos: 0</p>
+      <img src="mario.gif" id="player">
+      <img src="mal.png" id="obstacle">
+    </div>
+
+   
+    <p id="message"></p>
+
+    <button id="playButton">JOGAR</button>
+    <button id="jumpButton" style="display: none;">PULAR</button>
+    <button id="restartButton" style="display: none;">RECOMEÇAR</button>
+  
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
